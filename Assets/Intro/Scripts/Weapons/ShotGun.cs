@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShotGun : Weapon {
 
-    public float spread = 5f;
+    public float pellets = 6f;
 
     public override void Attack()
     {
@@ -20,8 +20,8 @@ public class ShotGun : Weapon {
         //Instatiate a new bullet from prefab "projectile"
         GameObject clone = Instantiate(projectile, spawnPoint.position, spawnPoint.rotation);
         //Get the component from the new bullet
-        Bullet newBullet = clone.GetComponent<Bullet>();
-        //Tell the ullet to Fire()
+        Projectiles newBullet = clone.GetComponent<Projectiles>();
+        //Tell the bullet to Fire()
         newBullet.Fire(direction + spread);
     }
 }
